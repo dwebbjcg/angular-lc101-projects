@@ -1,0 +1,13 @@
+.chores {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-size: large;
+    color: lightseagreen;
+}
+
+h3 {
+    text-decoration-line: underline;
+}
+
+.choreItems {
+    font-style: italic;
+}
