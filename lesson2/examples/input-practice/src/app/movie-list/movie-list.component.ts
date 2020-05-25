@@ -12,4 +12,16 @@ export class MovieListComponent implements OnInit {
 
    ngOnInit() {
    }
+
+   addMovie(newTitle: string) {
+      if (!this.movies.includes(newTitle)) {
+         this.movies.push(newTitle)
+      }
+      else if (newTitle === '') {
+         alert("Please enter a valid title.")
+      }
+      else if (this.movies.includes(newTitle)) {
+         alert("This title already exists on the list!")
+      }
+   }
 }
