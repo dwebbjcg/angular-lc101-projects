@@ -1,14 +1,34 @@
 <div class="chores">
     <h3>Chores</h3>
     <ul>
-        <li *ngFor = 'let chore of chores'>{{chore}}</li>
+        <li *ngFor='let chore of chores'>{{chore}}</li>
     </ul>
 </div>
+<div *ngIf="chores.length > finishedChores.length">
+    <p>Work Harder!!</p>
+</div>
 <hr>
+
 <div class="doneChores">
     <h3>Done Chores</h3>
     <ul>
-        <li *ngFor = 'let done of finishedChores'>{{done}}</li>
+        <li *ngFor='let done of finishedChores'>{{done}}</li>
     </ul>
 </div>
+<div *ngIf="chores.length===0 || finishedChores.length >= chores.length + 3; else moreChores">
+    <img src="{{trophyImage}}">
+</div>
+
+<ng-template #moreChores>
+    <p>No Allowance Yet!</p>
+</ng-template>
 <hr>
+
+<div *ngIf="chores.length===0 && finishedChores.length >= 4; else earnIceCream">
+    <h1>Ice Cream Treat!!</h1>
+
+</div>
+<ng-template #earnIceCream>
+    <p>To earn an Ice Cream treat: <br> Your Chores list must be empty. <br> You must have 4 items on your Done list.
+    </p>
+</ng-template>
